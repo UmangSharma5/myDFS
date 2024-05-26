@@ -6,7 +6,7 @@
 using namespace std;
 
 FileTree::FileTree(){
-    TreeNode("/",false);
+    _root = new TreeNode("/",false);
 } 
 
 bool FileTree::find_node(const string &path, TreeNode **last_node)const{

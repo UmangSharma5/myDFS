@@ -4,8 +4,9 @@
 #include <string>
 #include <mutex>
 #include <condition_variable>
-
 using namespace std;
+
+extern int chunkSize;
 
 class DataServer{
     private:
@@ -20,7 +21,7 @@ class DataServer{
         mutex mtx;
         condition_variable cv;
         string cmd;
-        int fid, bufsize, offset;
+        int fid, bufSize, offset;
         char* buf;
         bool finish;
 

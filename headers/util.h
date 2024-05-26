@@ -1,6 +1,8 @@
 #ifndef _UTIL_H
 #define _UTIL_H
 
+#define BLOCK_SIZE 64
+
 #include <iostream>
 #include <sstream>
 #include <vector>
@@ -22,6 +24,29 @@ std::vector<int> argsort(const std::vector<T> &vec){
     return idx;
 }
 
+///////////////// Referred Github/Google (open source) for MD5/////////////////////
+
+class MD5{
+    public:
+        MD5();
+        MD5& update(const unsigned char* in, size_t inputLen);
+        MD5& update(const char* in, size_t inputLen);
+        MD5& finalize();
+        string toString() const;
+
+    private:
+        void init();
+        void transform(const uint8_t block[BLOCK_SIZE]);
+
+        uint8_t buffer[BLOCK_SIZE];
+        uint8_t digest[16];
+
+        uint32_t state[4];
+        uint32_t lo,hi;
+        bool finalized;        
+};
+
+string md5(const string str);
 
 
 #endif

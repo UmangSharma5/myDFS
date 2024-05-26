@@ -9,7 +9,7 @@ using namespace std;
 
 class NameServer {
     private: 
-        vector<DataServer *> dataservers_;
+        vector<DataServer *> dataServers_;
         FileTree fileTree_;
         int numReplicate_;
         int idCnt_;
