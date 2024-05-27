@@ -1,8 +1,8 @@
 #include <iostream>
 #include <thread>
 #include <vector>
-#include "nameserver.h";
-#include "dataserver.h";
+#include "nameserver.h"
+#include "dataserver.h"
 
 const int numReplicate = 4;
 
